@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Plan Project Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2f3b52;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            margin: 20px;
+        }
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .task {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .task h3 {
+            margin: 0;
+            color: #333;
+        }
+        .task p {
+            color: #666;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+        }
+        .progress-bar .progress {
+            height: 100%;
+            border-radius: 5px;
+            background-color: #4caf50;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Business Planning Project</h1>
+</header>
+
+<div class="container">
+    <h2>Project Tasks</h2>
+    <ul class="task-list">
+        <li class="task">
+            <h3>Market Research</h3>
+            <p>Conduct research on market trends and competitors.</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 30%;"></div>
+            </div>
+            <p>Due Date: <strong>Feb 15, 2025</strong></p>
+        </li>
+
+        <li class="task">
+            <h3>Business Model Design</h3>
+            <p>Create a solid business model and plan for the first 6 months.</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 50%;"></div>
+            </div>
+            <p>Due Date: <strong>Feb 28, 2025</strong></p>
+        </li>
+
+        <li class="task">
+            <h3>Financial Projections</h3>
+            <p>Develop financial forecasts and identify key metrics.</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 10%;"></div>
+            </div>
+            <p>Due Date: <strong>March 5, 2025</strong></p>
+        </li>
+
+        <li class="task">
+            <h3>Marketing Strategy</h3>
+            <p>Build a strategy to promote the business online and offline.</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 0%;"></div>
+            </div>
+            <p>Due Date: <strong>March 10, 2025</strong></p>
+        </li>
+    </ul>
+
+    <button onclick="addTask()">Add New Task</button>
+</div>
+
+<script>
+    function addTask() {
+        const newTask = prompt('Enter task name:');
+        const newDescription = prompt('Enter task description:');
+        const newDueDate = prompt('Enter task due date (e.g., Feb 25, 2025):');
+
+        const taskList = document.querySelector('.task-list');
+        const newTaskElement = document.createElement('li');
+        newTaskElement.classList.add('task');
+        newTaskElement.innerHTML = `
+            <h3>${newTask}</h3>
+            <p>${newDescription}</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 0%;"></div>
+            </div>
+            <p>Due Date: <strong>${newDueDate}</strong></p>
+        `;
+        taskList.appendChild(newTaskElement);
+    }
+</script>
+
+</body>
+</html>
